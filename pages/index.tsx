@@ -53,7 +53,12 @@ export default function Home() {
         os = 'Windows';
       } else if (ua.indexOf('Android') > -1) {
         os = 'Android';
-      } else if (ua.indexOf('iOS') > -1) {
+      } else if (
+        ua.indexOf('iPhone') > -1 ||
+        ua.indexOf('iPad') > -1 ||
+        ua.indexOf('iPod') > -1 ||
+        ua.indexOf('iOS') > -1
+      ) {
         os = 'iOS';
       } else if (ua.indexOf('Mac OS X') > -1) {
         os = 'Mac OS X';
