@@ -51,14 +51,14 @@ export default function Home() {
 
       if (ua.indexOf('Windows') > -1) {
         os = 'Windows';
-      } else if (ua.indexOf('Mac OS X') > -1) {
-        os = 'Mac OS X';
-      } else if (ua.indexOf('Linux') > -1) {
-        os = 'Linux';
       } else if (ua.indexOf('Android') > -1) {
         os = 'Android';
       } else if (ua.indexOf('iOS') > -1) {
         os = 'iOS';
+      } else if (ua.indexOf('Mac OS X') > -1) {
+        os = 'Mac OS X';
+      } else if (ua.indexOf('Linux') > -1) {
+        os = 'Linux';
       } else {
         os = 'Unknown';
       }
