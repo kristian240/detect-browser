@@ -31,39 +31,42 @@ export default function Home() {
         os: navigator.userAgentData.platform,
       });
     } else if (navigator.userAgent) {
-      const userAgent = navigator.userAgent;
+      const ua = navigator.userAgent;
+      let browser = '';
+      let os = '';
 
-      if (userAgent.indexOf('Opera') > -1 || userAgent.indexOf('OPR') > -1) {
-        setAgentInfo({
-          browser: 'Opera',
-          os: navigator.platform,
-        });
-      } else if (userAgent.indexOf('Chrome') > -1) {
-        setAgentInfo({
-          browser: 'Chrome',
-          os: navigator.platform,
-        });
-      } else if (userAgent.indexOf('Safari') > -1) {
-        setAgentInfo({
-          browser: 'Safari',
-          os: navigator.platform,
-        });
-      } else if (userAgent.indexOf('Firefox') > -1) {
-        setAgentInfo({
-          browser: 'Firefox',
-          os: navigator.platform,
-        });
-      } else if (userAgent.indexOf('MSIE') > -1 || userAgent.indexOf('Trident/') > -1) {
-        setAgentInfo({
-          browser: 'Microsoft Internet Explorer',
-          os: navigator.platform,
-        });
+      if (ua.indexOf('Opera') > -1 || ua.indexOf('OPR') > -1) {
+        browser = 'Opera';
+      } else if (ua.indexOf('Chrome') > -1) {
+        browser = 'Chrome';
+      } else if (ua.indexOf('Safari') > -1) {
+        browser = 'Safari';
+      } else if (ua.indexOf('Firefox') > -1) {
+        browser = 'Firefox';
+      } else if (ua.indexOf('MSIE') > -1 || ua.indexOf('Trident/') > -1) {
+        browser = 'Microsoft Internet Explorer';
       } else {
-        setAgentInfo({
-          browser: 'Unknown',
-          os: navigator.platform,
-        });
+        browser = 'Unknown';
       }
+
+      if (ua.indexOf('Windows') > -1) {
+        os = 'Windows';
+      } else if (ua.indexOf('Mac OS X') > -1) {
+        os = 'Mac OS X';
+      } else if (ua.indexOf('Linux') > -1) {
+        os = 'Linux';
+      } else if (ua.indexOf('Android') > -1) {
+        os = 'Android';
+      } else if (ua.indexOf('iOS') > -1) {
+        os = 'iOS';
+      } else {
+        os = 'Unknown';
+      }
+
+      setAgentInfo({
+        browser,
+        os,
+      });
     }
   }, []);
 
